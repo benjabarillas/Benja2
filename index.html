@@ -125,15 +125,16 @@ a{color:inherit;text-decoration:none;}
 .uitem.red{color:#d93535;}
 .usep{height:1px;background:var(--line);}
 
-/* BACK BAR */
+/* BACK BAR (Mejorado Aesthetic) */
 .back-bar{display:flex;align-items:center;gap:10px;padding:11px 1.5rem;
   border-bottom:1px solid var(--line);background:var(--white);
   position:sticky;top:56px;z-index:100;}
-.back-btn{display:flex;align-items:center;gap:5px;font-size:14px;
-  color:var(--g);cursor:pointer;font-weight:500;background:none;border:none;padding:3px 0;}
-.back-btn:hover{opacity:.72;}
-.bc-sep{color:var(--ink4);}
-.bc-label{font-size:14px;color:var(--ink4);}
+.back-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;
+  color:var(--ink2);cursor:pointer;font-weight:600;background:var(--surf);
+  border:1px solid var(--line);padding:6px 14px;border-radius:100px;transition:all .14s;}
+.back-btn:hover{background:var(--line);transform:translateX(-2px);}
+.bc-sep{color:var(--ink4);display:none;}
+.bc-label{font-size:14px;color:var(--ink4);font-weight:500;margin-left:4px;}
 
 /* HERO */
 .hero{padding:2.5rem 1.5rem 2rem;max-width:760px;margin:0 auto;text-align:center;}
@@ -181,33 +182,26 @@ a{color:inherit;text-decoration:none;}
 .fc.on{background:var(--ink);border-color:var(--ink);color:#fff;}
 .fc .fc-dot{width:7px;height:7px;border-radius:50%;display:inline-block;}
 
-.bgrid{display:grid;grid-template-columns:360px 1fr;height:540px;
+/* MEJORA 1: BGRID CON SCROLL INDEPENDIENTE */
+.bgrid{display:grid;grid-template-columns:360px 1fr;height:calc(100vh - 200px);min-height:500px;
   border:1px solid var(--line);border-radius:var(--rl);overflow:hidden;box-shadow:var(--sh);}
-.lpanel{background:var(--white);display:flex;flex-direction:column;border-right:1px solid var(--line);}
-.lhd{display:flex;align-items:center;justify-content:space-between;
+.lpanel{background:var(--surf);display:flex;flex-direction:column;border-right:1px solid var(--line);height:100%;}
+.lhd{display:flex;align-items:center;justify-content:space-between;background:var(--white);
   padding:10px 14px;border-bottom:1px solid var(--line);}
 .lhd-cnt{font-size:13px;color:var(--ink3);font-weight:400;}
 .new-dot{background:var(--g);color:#fff;font-size:11px;font-weight:600;padding:2px 9px;border-radius:100px;}
-.lscroll{flex:1;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--line) transparent;}
+.lscroll{flex:1;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--line) transparent;padding-bottom:10px;}
+.mpanel{position:relative;height:100%;}
 
-/* Job card — Airtasker style */
-.jcard{padding:14px 16px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .1s;}
-.jcard:hover{background:#fafafa;}
-.jcard.sel{background:var(--gl);border-left:2px solid var(--g);}
-.jct{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:4px;}
-.jc-title{font-size:14px;font-weight:500;line-height:1.35;flex:1;color:var(--ink);}
-.jc-price{font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap;}
-.jc-meta{display:flex;flex-wrap:wrap;gap:5px;font-size:12px;color:var(--ink3);margin-bottom:8px;}
-.jc-meta span{display:flex;align-items:center;gap:3px;}
-.jc-foot{display:flex;align-items:center;justify-content:space-between;}
-.jc-tags{display:flex;gap:5px;align-items:center;flex-wrap:wrap;}
-.jc-open{font-size:12px;font-weight:600;color:var(--g);}
+/* MEJORA 2: JOB CARD (ESTILO AIRTASKER) */
+.jcard{background:var(--white);margin:10px 10px 0 10px;padding:16px 18px;border:1px solid var(--line);border-radius:var(--rl);cursor:pointer;transition:all .15s;box-shadow:0 2px 8px rgba(0,0,0,.03);}
+.jcard:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.08);border-color:var(--g);}
+.jcard.sel{border-color:var(--g);box-shadow:0 0 0 1px var(--g);}
 
 /* Fbar kept for backwards compat but hidden — replaced by filter-row */
 .fbar{display:none;}
 
 /* MAP */
-.mpanel{position:relative;}
 .mpanel .leaflet-container{font-family:-apple-system,BlinkMacSystemFont,sans-serif!important;}
 .map-search-wrap{position:absolute;top:12px;left:12px;right:56px;z-index:999;}
 .map-search-box{display:flex;align-items:center;background:rgba(255,255,255,.97);
@@ -303,12 +297,6 @@ a{color:inherit;text-decoration:none;}
 .auth-sub{font-size:14px;color:var(--ink3);margin-bottom:1.5rem;}
 .auth-sw{text-align:center;font-size:13px;color:var(--ink3);margin-top:1.25rem;}
 .auth-sw a{color:var(--g);cursor:pointer;font-weight:500;}
-.role-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.5rem;}
-.rcard{padding:12px;border:1.5px solid var(--line);border-radius:var(--r);text-align:center;cursor:pointer;transition:all .13s;}
-.rcard.on{border-color:var(--g);background:var(--gl);}
-.rcard-i{font-size:20px;margin-bottom:4px;}
-.rcard-l{font-size:13px;font-weight:600;}
-.rcard-s{font-size:11px;color:var(--ink3);}
 .demo-box{background:var(--surf);border-radius:var(--r);padding:12px;font-size:13px;color:var(--ink3);text-align:center;line-height:1.8;}
 
 /* CATS */
@@ -372,9 +360,9 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
 /* MY JOBS */
 .mjwrap{max-width:800px;margin:0 auto;padding:2rem 1.5rem 5rem;}
 .mjcard{background:var(--white);border:1px solid var(--line);border-radius:var(--rl);
-  padding:1.25rem;margin-bottom:.75rem;display:flex;align-items:flex-start;
+  padding:1.35rem 1.5rem;margin-bottom:.875rem;display:flex;align-items:flex-start;
   justify-content:space-between;gap:1rem;transition:box-shadow .14s;}
-.mjcard:hover{box-shadow:var(--sh);}
+.mjcard:hover{box-shadow:0 4px 24px rgba(0,0,0,.08);}
 .mj-t{font-size:15px;font-weight:500;margin-bottom:3px;}
 .mj-m{font-size:13px;color:var(--ink3);}
 .mj-a{display:flex;flex-direction:column;align-items:flex-end;gap:7px;flex-shrink:0;}
@@ -399,8 +387,8 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
 .rev-row{padding:.875rem 0;border-bottom:1px solid var(--line);}
 .rev-row:last-child{border-bottom:none;}
 
-/* MESSAGES */
-.msg-layout{display:grid;grid-template-columns:285px 1fr;height:calc(100vh - 56px);}
+/* MEJORA 6: MESSAGES (CHAT AESTHETIC ESTILO WHATSAPP/IOS) */
+.msg-layout{display:grid;grid-template-columns:285px 1fr;height:calc(100vh - 112px);}
 .conv-list{border-right:1px solid var(--line);overflow-y:auto;background:var(--white);}
 .conv-item{display:flex;align-items:center;gap:10px;padding:13px 14px;
   border-bottom:1px solid var(--line);cursor:pointer;transition:background .1s;}
@@ -408,33 +396,15 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
 .conv-item.on{background:var(--gl);}
 .cv-name{font-size:14px;font-weight:500;margin-bottom:1px;}
 .cv-prev{font-size:12px;color:var(--ink3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:155px;}
-.chat-area{display:flex;flex-direction:column;background:var(--surf);}
+.chat-area{display:flex;flex-direction:column;background:#efeae2;}
 .chat-hd{background:var(--white);border-bottom:1px solid var(--line);padding:13px 1.25rem;display:flex;align-items:center;gap:10px;}
-.chat-body{flex:1;overflow-y:auto;padding:1.25rem;display:flex;flex-direction:column;gap:8px;}
-.bubble{max-width:68%;padding:10px 14px;border-radius:18px;font-size:14px;line-height:1.5;}
-.bubble-me{background:var(--g);color:#fff;align-self:flex-end;border-bottom-right-radius:4px;}
+.chat-body{flex:1;overflow-y:auto;padding:1.25rem;display:flex;flex-direction:column;gap:10px;}
+.bubble{max-width:68%;padding:10px 14px;border-radius:18px;font-size:14px;line-height:1.4;box-shadow:0 1px 2px rgba(0,0,0,.08);position:relative;}
+.bubble-me{background:#dcf8c6;color:var(--ink);align-self:flex-end;border-bottom-right-radius:4px;}
 .bubble-them{background:var(--white);color:var(--ink);border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px;}
 .chat-ft{background:var(--white);border-top:1px solid var(--line);padding:12px 1.25rem;display:flex;gap:8px;}
 .chat-inp{flex:1;border:1px solid var(--line);border-radius:100px;padding:9px 16px;outline:none;font-size:14px;transition:border-color .13s;}
 .chat-inp:focus{border-color:var(--g);}
-
-/* IMPROVED CARD PADDING & SHADOWS */
-.jcard{padding:16px 18px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .1s,box-shadow .14s;}
-.jcard:hover{background:#fafafa;box-shadow:inset 3px 0 0 var(--g);}
-.jcard.sel{background:var(--gl);border-left:3px solid var(--g);}
-.mjcard{background:var(--white);border:1px solid var(--line);border-radius:var(--rl);
-  padding:1.35rem 1.5rem;margin-bottom:.875rem;display:flex;align-items:flex-start;
-  justify-content:space-between;gap:1rem;transition:box-shadow .14s;}
-.mjcard:hover{box-shadow:0 4px 24px rgba(0,0,0,.08);}
-
-/* IMPROVED FILTER BAR */
-.fc{display:inline-flex;align-items:center;gap:5px;padding:8px 16px;
-  border:1.5px solid var(--line);border-radius:100px;font-size:13px;font-weight:500;
-  cursor:pointer;white-space:nowrap;background:var(--white);color:var(--ink2);
-  transition:all .15s;flex-shrink:0;user-select:none;}
-.fc:hover{border-color:var(--g);color:var(--g);background:var(--gl);transform:translateY(-1px);box-shadow:0 2px 10px rgba(22,169,110,.12);}
-.fc.on{background:var(--ink);border-color:var(--ink);color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.15);}
-.fc.on:hover{transform:none;box-shadow:0 2px 10px rgba(0,0,0,.15);}
 
 /* IMPROVED AUTOCOMPLETE DROPDOWN */
 .ac-list{position:absolute;top:calc(100% + 6px);left:0;right:0;
@@ -505,7 +475,6 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
 <body>
 <div id="toast"></div>
 
-<!-- BOTTOM TAB BAR (mobile) -->
 <div class="btab-bar" id="btab-bar">
   <button class="btab on" id="bt-home" onclick="btGo('landing')"><span class="btab-icon">🏠</span>Inicio</button>
   <button class="btab" id="bt-browse" onclick="btGo('browse')"><span class="btab-icon">🔍</span>Explorar</button>
@@ -514,10 +483,8 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
   <button class="btab" id="bt-profile" onclick="auth(()=>btGo('profile'))"><span class="btab-icon">👤</span>Perfil</button>
 </div>
 
-<!-- MAP/LIST TOGGLE (mobile) -->
 <button class="map-list-toggle" id="ml-toggle" onclick="toggleMapList()">🗺 Ver mapa</button>
 
-<!-- ═══ MODALS ═══ -->
 <div class="ov" id="ov-apply">
   <div class="modal">
     <div class="mhd"><h3>Postular al trabajo</h3><button class="mclose" onclick="cov('apply')">✕</button></div>
@@ -562,9 +529,6 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     LANDING
-═══════════════════════════════════════════ -->
 <div id="screen-landing" class="screen active">
   <nav class="nav">
     <span class="nav-logo" onclick="go('landing')">Servy<em>.</em></span>
@@ -593,7 +557,6 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
     </div>
   </div>
 
-  <!-- Map + list preview -->
   <div class="bwrap" style="padding-top:.75rem;">
     <div class="bhd">
       <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
@@ -634,7 +597,6 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
     </div>
   </div>
 
-  <!-- Categories -->
   <div class="cats-sec">
     <div class="eyebrow">Categorías</div>
     <div class="sec-h" style="margin-bottom:.5rem;">Encuentra lo que necesitas</div>
@@ -645,7 +607,6 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
     <div class="cats-grid" id="cats-grid"></div>
   </div>
 
-  <!-- How -->
   <div class="how-sec">
     <div class="how-in">
       <div class="eyebrow" style="color:#3dcf96;">Cómo funciona</div>
@@ -658,7 +619,6 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
     </div>
   </div>
 
-  <!-- Guarantees -->
   <div class="guar-sec">
     <div class="eyebrow">Confianza total</div>
     <div class="sec-h" style="margin-bottom:.375rem;">Tu trabajo, protegido de principio a fin</div>
@@ -682,7 +642,6 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
     </div>
   </div>
 
-  <!-- Levels -->
   <div class="lev-sec">
     <div class="lev-in">
       <div class="eyebrow">Para trabajadores</div>
@@ -729,10 +688,10 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
 
   <div class="cta-sec">
     <h2>¿Listo para empezar?</h2>
-    <p>Únete como cliente o trabajador. Es completamente gratis registrarse.</p>
+    <p>Únete hoy. Es completamente gratis registrarse.</p>
     <div class="cta-btns">
       <button class="btn btn-p btn-lg" onclick="auth(()=>go('post-job'))">Publicar mi primer trabajo →</button>
-      <button class="btn btn-lg" style="background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);" onclick="go('register')">Ofrecer mis servicios</button>
+      <button class="btn btn-lg" style="background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);" onclick="go('register')">Crear cuenta gratis</button>
     </div>
   </div>
 
@@ -742,7 +701,7 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
       <p>Conectando Chile con servicios reales · Comisiones justas · Pagos protegidos</p>
       <div class="footer-links">
         <a onclick="go('browse')">Ver trabajos</a>
-        <a onclick="go('register')">Ser trabajador</a>
+        <a onclick="go('register')">Regístrate</a>
         <a>Cómo funciona</a>
         <a>Garantía</a>
         <a>Contacto</a>
@@ -752,9 +711,6 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
   </footer>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     BROWSE
-═══════════════════════════════════════════ -->
 <div id="screen-browse" class="screen">
   <nav class="nav">
     <span class="nav-logo" onclick="go('landing')">Servy<em>.</em></span>
@@ -778,7 +734,6 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
         <button class="btn btn-p btn-sm" onclick="auth(()=>go('post-job'))">+ Publicar trabajo</button>
       </div>
     </div>
-    <!-- Airtasker-style filter row above the grid -->
     <div class="filter-row" id="browse-fbar">
       <span class="fc on" onclick="bfc(this,'all')">Todos los trabajos</span>
       <span class="fc" onclick="bfc(this,'urgent')"><span class="fc-dot" style="background:#d93535;"></span>Urgente</span>
@@ -810,9 +765,6 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     DETAIL
-═══════════════════════════════════════════ -->
 <div id="screen-detail" class="screen">
   <nav class="nav">
     <span class="nav-logo" onclick="go('landing')">Servy<em>.</em></span>
@@ -824,15 +776,10 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
   </nav>
   <div class="back-bar">
     <button class="back-btn" onclick="goBack()">← Volver</button>
-    <span class="bc-sep">/</span>
-    <span class="bc-label" id="d-crumb">Detalle</span>
   </div>
   <div class="dwrap" id="d-content"></div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     POST JOB
-═══════════════════════════════════════════ -->
 <div id="screen-post" class="screen">
   <nav class="nav">
     <span class="nav-logo" onclick="go('landing')">Servy<em>.</em></span>
@@ -840,9 +787,7 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
     <div class="nav-r" id="nr-post"></div>
   </nav>
   <div class="back-bar">
-    <button class="back-btn" onclick="goBack()">← Volver</button>
-    <span class="bc-sep">/</span>
-    <span class="bc-label">Publicar trabajo</span>
+    <button class="back-btn" onclick="goBack()">← Cancelar y volver</button>
   </div>
   <div class="pwrap">
     <h1 style="font-size:1.5rem;font-weight:700;letter-spacing:-.4px;margin-bottom:.375rem;">Publicar trabajo</h1>
@@ -915,7 +860,7 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
       <p style="font-size:14px;font-weight:600;margin-bottom:1rem;color:var(--ink2);">Confirma y publica</p>
       <div class="p-preview" id="p-preview"></div>
       <div style="background:var(--gl);border-radius:var(--r);padding:13px 16px;margin-bottom:1.5rem;font-size:13px;color:var(--gm);line-height:1.8;">
-        ✓ Aparece inmediatamente en el mapa para todos los trabajadores<br>
+        ✓ Aparece inmediatamente en el mapa para todos los usuarios<br>
         ✓ Recibirás una notificación cuando alguien postule<br>
         ✓ Garantía de satisfacción Servy incluida en todo trabajo
       </div>
@@ -927,14 +872,12 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     LOGIN
-═══════════════════════════════════════════ -->
 <div id="screen-login" class="screen">
   <nav class="nav">
     <span class="nav-logo" onclick="go('landing')">Servy<em>.</em></span>
-    <div class="nav-r"><button class="btn btn-g btn-sm" onclick="go('landing')">← Inicio</button></div>
+    <div class="nav-r"></div>
   </nav>
+  <div class="back-bar"><button class="back-btn" onclick="go('landing')">← Volver al inicio</button></div>
   <div class="auth-wrap">
     <div class="auth-card">
       <div class="auth-logo"><span class="nav-logo" style="font-size:22px;cursor:pointer;" onclick="go('landing')">Servy<em>.</em></span></div>
@@ -947,49 +890,39 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
       <div class="auth-sw">¿No tienes cuenta? <a onclick="go('register')">Regístrate gratis</a></div>
       <div class="divl"></div>
       <div class="demo-box">
-        <strong style="color:var(--ink);">Cuentas demo</strong><br>
-        <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="84e7e5f6e8ebf7c4e0e1e9ebaae7e8">[email&#160;protected]</a> / <strong>1234</strong> — Trabajador (Diamante 💎)<br>
-        <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fc8c99988e93bc98999193d29f90">[email&#160;protected]</a> / <strong>1234</strong> — Cliente
+        <strong style="color:var(--ink);">Cuentas demo de prueba</strong><br>
+        carlos@demo.cl / 1234 — Perfil Completo (Diamante 💎)<br>
+        maria@demo.cl / 1234 — Perfil Completo<br>
+        pedro@demo.cl / 1234 — Perfil Nuevo (Sin verificaciones)
       </div>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     REGISTER
-═══════════════════════════════════════════ -->
 <div id="screen-register" class="screen">
   <nav class="nav">
     <span class="nav-logo" onclick="go('landing')">Servy<em>.</em></span>
-    <div class="nav-r"><button class="btn btn-g btn-sm" onclick="go('landing')">← Inicio</button></div>
+    <div class="nav-r"></div>
   </nav>
+  <div class="back-bar"><button class="back-btn" onclick="go('login')">← Volver a Login</button></div>
   <div class="auth-wrap">
     <div class="auth-card">
       <div class="auth-logo"><span class="nav-logo" style="font-size:22px;cursor:pointer;" onclick="go('landing')">Servy<em>.</em></span></div>
       <h2 class="auth-h">Crear cuenta</h2>
-      <p class="auth-sub">¿Cómo quieres unirte?</p>
-      <div class="role-grid">
-        <div class="rcard on" id="rc-cli" onclick="selRole('client')"><div class="rcard-i">🧑‍💼</div><div class="rcard-l">Cliente</div><div class="rcard-s">Publicar trabajos</div></div>
-        <div class="rcard" id="rc-wrk" onclick="selRole('worker')"><div class="rcard-i">🔧</div><div class="rcard-l">Trabajador</div><div class="rcard-s">Ofrecer servicios</div></div>
-      </div>
+      <p class="auth-sub" style="margin-bottom:1rem;">Cualquier usuario puede publicar y postular a trabajos.</p>
+      
       <div class="fg-row">
         <div class="fg"><label>Nombre</label><input id="r-name" placeholder="Juan"/></div>
         <div class="fg"><label>Apellido</label><input id="r-last" placeholder="Pérez"/></div>
       </div>
       <div class="fg"><label>Email</label><input type="email" id="r-email" placeholder="tu@email.com"/></div>
+      <div class="fg"><label>Teléfono</label><input type="tel" id="r-phone" placeholder="+56 9 1234 5678"/></div>
       <div class="fg"><label>Contraseña</label><input type="password" id="r-pass" placeholder="Mínimo 6 caracteres"/></div>
-      <div id="r-extra" style="display:none;">
-        <div class="fg"><label>Especialidad principal</label><select id="r-spec"><option value="">Selecciona...</option></select></div>
-        <div class="fg"><label>Sobre ti</label><textarea id="r-bio" placeholder="Cuéntanos tu experiencia, habilidades y años en el rubro..."></textarea></div>
-        <div style="background:var(--surf);border-radius:var(--r);padding:12px;margin-bottom:1rem;font-size:13px;color:var(--ink3);">
-          🔐 <strong style="color:var(--ink);">Verificación requerida:</strong><br>
-          <span id="r-verif-home">• Cédula de identidad + selfie + antecedentes (Truora)</span>
-          <span id="r-verif-pro" style="display:none;"><br>• Portafolio obligatorio + LinkedIn o título profesional</span>
-        </div>
-        <div id="r-pro-extra" style="display:none;">
-          <div class="fg"><label>LinkedIn o portafolio <span style="color:var(--g);">*</span> (requerido para Pro)</label><input id="r-linkedin" placeholder="linkedin.com/in/tu-perfil o mi-portfolio.cl"/></div>
-        </div>
+      
+      <div style="background:#f0f4f8; padding:12px; border-radius:8px; margin-bottom:1rem; font-size:12px; color:var(--ink2);">
+        🛡️ <strong>Verificación progresiva:</strong> Al crear tu cuenta validarás tu teléfono. Para publicar o postular a trabajos posteriormente, se solicitará validación de Carnet, Antecedentes o Título.
       </div>
+      
       <p class="err-msg" id="r-err"></p>
       <button class="btn btn-p btn-blk btn-lg" onclick="doRegister()" style="margin-top:.25rem;">Crear cuenta gratis →</button>
       <div class="auth-sw">¿Ya tienes cuenta? <a onclick="go('login')">Inicia sesión</a></div>
@@ -997,9 +930,6 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     MY JOBS
-═══════════════════════════════════════════ -->
 <div id="screen-my-jobs" class="screen">
   <nav class="nav">
     <span class="nav-logo" onclick="go('landing')">Servy<em>.</em></span>
@@ -1011,6 +941,7 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
     </ul>
     <div class="nav-r" id="nr-myjobs"></div>
   </nav>
+  <div class="back-bar"><button class="back-btn" onclick="goBack()">← Volver</button></div>
   <div class="mjwrap">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:.75rem;">
       <h1 style="font-size:1.4rem;font-weight:700;letter-spacing:-.3px;">Mis trabajos</h1>
@@ -1026,9 +957,6 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     PROFILE
-═══════════════════════════════════════════ -->
 <div id="screen-profile" class="screen">
   <nav class="nav">
     <span class="nav-logo" onclick="go('landing')">Servy<em>.</em></span>
@@ -1039,12 +967,10 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
     </ul>
     <div class="nav-r" id="nr-profile"></div>
   </nav>
+  <div class="back-bar"><button class="back-btn" onclick="goBack()">← Volver</button></div>
   <div class="profwrap" id="prof-content"></div>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     MESSAGES
-═══════════════════════════════════════════ -->
 <div id="screen-messages" class="screen">
   <nav class="nav">
     <span class="nav-logo" onclick="go('landing')">Servy<em>.</em></span>
@@ -1055,6 +981,7 @@ footer{border-top:1px solid var(--line);padding:2.5rem 1.5rem;font-size:13px;col
     </ul>
     <div class="nav-r" id="nr-messages"></div>
   </nav>
+  <div class="back-bar"><button class="back-btn" onclick="goBack()">← Volver</button></div>
   <div class="msg-layout">
     <div class="conv-list" id="conv-list"></div>
     <div class="chat-area" id="chat-area">
@@ -1079,7 +1006,6 @@ const DB={
 };
 
 // ── ASYNC DATA LAYER ──────────────────────────────────────────────────────────
-// Swap these for real API calls (fetch/axios) when connecting a backend.
 async function getJobsAsync(){return DB.get('jobs')||[];}
 async function saveJobsAsync(j){DB.set('jobs',j);}
 async function getUsersAsync(){return DB.get('users')||[];}
@@ -1087,7 +1013,6 @@ async function saveUsersAsync(u){DB.set('users',u);}
 async function getMsgsAsync(){return DB.get('msgs')||[];}
 async function saveMsgsAsync(m){DB.set('msgs',m);}
 
-// Sync aliases (kept for backward-compat with existing sync call-sites)
 function getUsers(){return DB.get('users')||[];}
 function getJobs(){return DB.get('jobs')||[];}
 function saveJobs(j){DB.set('jobs',j);}
@@ -1162,7 +1087,6 @@ function coordsForAddr(addr){
   for(const[name,coords] of Object.entries(LOCS)){
     if(addr.toLowerCase().includes(name.toLowerCase())) return coords;
   }
-  // Jitter within Santiago for unknown
   return[-33.437+Math.random()*0.08-0.04,-70.648+Math.random()*0.12-0.06];
 }
 
@@ -1189,16 +1113,13 @@ function initLeafletMap(id, containerId, panelEl){
     maxZoom:19,
   }).addTo(map);
 
-  // Reposition zoom control
   map.zoomControl.setPosition('bottomright');
-
   MAPS[id]=map;
   return map;
 }
 
 function addMarkersToMap(id, jobs){
   const map=MAPS[id]; if(!map) return;
-  // Remove old markers
   MAP_MARKERS[id].forEach(m=>m.remove());
   MAP_MARKERS[id]=[];
 
@@ -1220,15 +1141,12 @@ function addMarkersToMap(id, jobs){
     });
 
     const marker=L.marker(coords,{icon}).addTo(map);
-
-    // Popup
     const addr=j.addr||j.loc||'';
     const popupHTML=`
       <div class="popup-job-title">${j.title}</div>
       <div class="popup-job-meta">📍 ${addr} · 📅 ${j.date}</div>
       <button class="popup-btn" onclick="openDetail('${j.id}','browse')">Ver detalle →</button>`;
     marker.bindPopup(popupHTML,{maxWidth:260,minWidth:220});
-
     marker.on('click',()=>{ highlightCard(j.id); });
     MAP_MARKERS[id].push(marker);
   });
@@ -1254,47 +1172,33 @@ function fitMapToJobs(id){
 let CU=null,prev='landing',currentJobId=null;
 let applyJobId=null,hireData=null,reviewJobId=null,starCount=5;
 let bMode='home',bFilter='all',lMode='home',lFilter='all';
-let curConv=null,postType='home',regRole='client',mjTabNow='posted';
+let curConv=null,postType='home',mjTabNow='posted';
 let selectedAddr=null;
 let mapsReady={land:false,browse:false};
 
 // ╔════════════════════════════════════════════╗
-// ║  SEED DATA                                  ║
+// ║  SEED DATA (Modificado para Universal)      ║
 // ╚════════════════════════════════════════════╝
 function seed(){
-  if(DB.get('s4')) return;
+  if(DB.get('s5')) return;
   DB.set('users',[
-    {id:'u1',name:'Carlos',last:'Rivera',email:'carlos@demo.cl',pw:'1234',role:'worker',spec:'Gasfitería',bio:'10 años de experiencia en gasfitería residencial y comercial. Certificado por CONAF. Trabajo en Providencia, Las Condes y alrededores.',color:'#1a7a55',rating:4.9,reviews:47,jobs:142,level:'Diamante',mj:22,verified:true},
-    {id:'u2',name:'María',last:'Silva',email:'maria@demo.cl',pw:'1234',role:'worker',spec:'Diseño gráfico',bio:'Diseñadora con 8 años de experiencia en branding, UX/UI y marketing digital. Portfolio en behance.net/mariasilva.',color:'#6a2a8a',rating:5.0,reviews:31,jobs:89,level:'Oro',mj:14,verified:true},
-    {id:'u3',name:'Pedro',last:'López',email:'pedro@demo.cl',pw:'1234',role:'client',color:'#1a5a9a',rating:4.7,reviews:12,jobs:0,level:'Estándar',mj:0,verified:false},
-    {id:'u4',name:'Ana',last:'Soto',email:'ana@demo.cl',pw:'1234',role:'worker',spec:'Limpieza',bio:'Servicio de limpieza profesional para hogares y oficinas. Material incluido. Disponible de lunes a sábado.',color:'#9a5010',rating:4.8,reviews:28,jobs:67,level:'Plata',mj:7,verified:true},
+    {id:'u1',name:'Carlos',last:'Rivera',email:'carlos@demo.cl',pw:'1234',phone:'+56912345678',spec:'Gasfitería',bio:'10 años de experiencia.',color:'#1a7a55',
+     verifIdentity:true, verifBackground:true, verifPro:true, level:'Diamante', mj:22,
+     reviewsAsWorker:[{stars:5},{stars:4},{stars:5}], reviewsAsClient:[]},
+    {id:'u2',name:'María',last:'Silva',email:'maria@demo.cl',pw:'1234',phone:'+56987654321',spec:'Diseño gráfico',bio:'Diseñadora UX/UI.',color:'#6a2a8a',
+     verifIdentity:true, verifBackground:true, verifPro:true, level:'Oro', mj:14,
+     reviewsAsWorker:[{stars:5},{stars:5}], reviewsAsClient:[{stars:5}]},
+    {id:'u3',name:'Pedro',last:'López',email:'pedro@demo.cl',pw:'1234',phone:'+56911223344',color:'#1a5a9a',
+     verifIdentity:false, verifBackground:false, verifPro:false, level:'Estándar', mj:0,
+     reviewsAsWorker:[], reviewsAsClient:[{stars:4},{stars:5}]},
   ]);
   DB.set('jobs',[
-    {id:'j1',title:'Reparación cañería bajo lavaplatos',desc:'Tengo una cañería que gotea bajo el lavaplatos de la cocina. Necesito que la revisen y reparen lo antes posible. El espacio es accesible.',cat:'Gasfitería',type:'home',budget:25000,urgent:true,date:'Hoy, 15:00',loc:'Providencia',addr:'Av. Providencia 1500, Providencia',coords:LOCS['Providencia'],status:'open',cid:'u3',apps:[],ts:Date.now()-3600000},
-    {id:'j2',title:'Armar muebles IKEA (comedor + 2 sillas)',desc:'Compré un juego de comedor en IKEA y necesito ayuda para armarlo. Todo viene en cajas con instrucciones. El depto es en un 3er piso sin ascensor.',cat:'Muebles',type:'home',budget:18000,urgent:false,date:'Mañana AM',loc:'Ñuñoa',addr:'Av. Irarrázaval 1200, Ñuñoa',coords:LOCS['Ñuñoa'],status:'open',cid:'u3',apps:[{wid:'u4',price:20000,msg:'Hola! Tengo experiencia armando muebles IKEA y Sodimac. Disponible mañana desde las 9am.',ts:Date.now()-1800000}],ts:Date.now()-7200000},
-    {id:'j3',title:'Limpieza fin de arriendo, depto 60m²',desc:'Necesito limpieza profunda para entregar departamento. Incluye baño, cocina, dormitorios y living. El depto está vacío, entrego llaves el sábado a las 14:00.',cat:'Limpieza',type:'home',budget:60000,urgent:false,date:'Sábado antes de las 13:00',loc:'Santiago Centro',addr:'Agustinas 814, Santiago Centro',coords:LOCS['Santiago Centro'],status:'open',cid:'u3',apps:[],ts:Date.now()-10800000},
-    {id:'j4',title:'Trámite revisión técnica auto Toyota 2019',desc:'Necesito que alguien lleve mi auto a revisión técnica. Tengo turno agendado en Av. Irarrázaval para mañana a las 10am.',cat:'Trámites',type:'home',budget:18000,urgent:false,date:'Mañana 10:00',loc:'Las Condes',addr:'Av. Tobalaba 1200, Las Condes',coords:LOCS['Las Condes'],status:'open',cid:'u3',apps:[],ts:Date.now()-14400000},
-    {id:'j5',title:'Diseño de logo para cafetería nueva',desc:'Abro una cafetería llamada "Café Colmena". Quiero un logo moderno, minimalista, con colores cálidos tipo terracota y miel. Necesito versión horizontal y vertical + favicon.',cat:'Diseño gráfico',type:'pro',budget:80000,urgent:false,date:'Esta semana',loc:'Remoto / Online',addr:'Remoto / Online',coords:LOCS['Remoto / Online'],status:'open',cid:'u3',apps:[{wid:'u2',price:75000,msg:'Hola Pedro! Tengo amplia experiencia en branding gastronómico. Te comparto mi portafolio en behance.',ts:Date.now()-900000}],ts:Date.now()-5400000},
-    {id:'j6',title:'Declaración de renta persona natural SII',desc:'Soy trabajador independiente con boleta de honorarios, 3 empleadores distintos. Necesito ayuda con la declaración de renta antes del 30 de abril.',cat:'Contabilidad',type:'pro',budget:35000,urgent:true,date:'Antes del 30 abril',loc:'Remoto / Online',addr:'Remoto / Online',coords:LOCS['Remoto / Online'],status:'open',cid:'u3',apps:[],ts:Date.now()-21600000},
-    {id:'j7',title:'Poda jardín y retiro de ramas, casa grande',desc:'Jardín de aprox 200m². Varios arbustos altos que necesitan poda. Incluir retiro de todas las ramas al terminar.',cat:'Jardín',type:'home',budget:45000,urgent:false,date:'Este fin de semana',loc:'Vitacura',addr:'Av. Kennedy 5600, Vitacura',coords:LOCS['Vitacura'],status:'open',cid:'u3',apps:[],ts:Date.now()-32400000},
-    {id:'j8',title:'Desarrollo de landing page en Webflow',desc:'Necesito una landing page profesional para mi startup. Diseño moderno, animaciones sutiles, formulario de contacto y versión mobile perfecta. Tengo wireframes listos.',cat:'Desarrollo',type:'pro',budget:280000,urgent:false,date:'Este mes',loc:'Remoto / Online',addr:'Remoto / Online',coords:LOCS['Remoto / Online'],status:'open',cid:'u3',apps:[],ts:Date.now()-43200000},
-    {id:'j9',title:'Instalación de ventanas doble vidrio x3',desc:'Tengo 3 ventanas en mis dormitorios. Las ventanas ya están compradas. Solo instalar con sellado correcto y dejar todo limpio.',cat:'Electricidad',type:'home',budget:120000,urgent:false,date:'Próxima semana',loc:'Maipú',addr:'Av. Pajaritos 3000, Maipú',coords:LOCS['Maipú'],status:'open',cid:'u3',apps:[],ts:Date.now()-54000000},
+    {id:'j1',title:'Reparación cañería bajo lavaplatos',desc:'Gotea mucho. Reparar rápido.',cat:'Gasfitería',type:'home',budget:25000,urgent:true,date:'Hoy, 15:00',loc:'Providencia',addr:'Av. Providencia 1500, Providencia',coords:LOCS['Providencia'],status:'open',cid:'u3',apps:[],ts:Date.now()-3600000},
+    {id:'j2',title:'Armar muebles IKEA (comedor + 2 sillas)',desc:'Ayuda para armarlo.',cat:'Muebles',type:'home',budget:18000,urgent:false,date:'Mañana AM',loc:'Ñuñoa',addr:'Av. Irarrázaval 1200, Ñuñoa',coords:LOCS['Ñuñoa'],status:'open',cid:'u3',apps:[],ts:Date.now()-7200000},
+    {id:'j5',title:'Diseño de logo para cafetería nueva',desc:'Logo moderno, minimalista.',cat:'Diseño gráfico',type:'pro',budget:80000,urgent:false,date:'Esta semana',loc:'Remoto / Online',addr:'Remoto / Online',coords:LOCS['Remoto / Online'],status:'open',cid:'u3',apps:[{wid:'u2',price:75000,msg:'Hola! Tengo experiencia en branding.',ts:Date.now()-900000}],ts:Date.now()-5400000},
   ]);
-  DB.set('msgs',[
-    {id:'m1',parts:['u2','u3'],jid:'j5',msgs:[
-      {from:'u3',txt:'Hola María, vi tu postulación para el logo de la cafetería. Me gustó tu portafolio.',ts:Date.now()-3600000},
-      {from:'u2',txt:'¡Hola Pedro! Gracias, me interesa mucho el proyecto. ¿Tienes referencias de estilo que te gusten?',ts:Date.now()-3500000},
-      {from:'u3',txt:'Algo minimalista con café y abejas. Colores cálidos tipo terracota y miel.',ts:Date.now()-3400000},
-      {from:'u2',txt:'Perfecto, eso lo manejo muy bien. Puedo tener el primer concepto en 48 horas si confirmas.',ts:Date.now()-3300000},
-    ]},
-    {id:'m2',parts:['u1','u3'],jid:'j1',msgs:[
-      {from:'u1',txt:'Hola Pedro, vi tu publicación de la cañería. Puedo ir hoy mismo a revisarla.',ts:Date.now()-1800000},
-      {from:'u3',txt:'Excelente! ¿A qué hora podrías llegar?',ts:Date.now()-1700000},
-      {from:'u1',txt:'A las 15:00 perfectamente. ¿Es en el edificio o casa?',ts:Date.now()-1600000},
-      {from:'u3',txt:'Casa, primer piso. Te mando la dirección exacta.',ts:Date.now()-1500000},
-    ]},
-  ]);
-  DB.set('s4',true);
+  DB.set('msgs',[]);
+  DB.set('s5',true);
 }
 
 // ╔════════════════════════════════════════════╗
@@ -1304,12 +1208,7 @@ const $=id=>document.getElementById(id);
 function clp(n){return '$'+Number(n).toLocaleString('es-CL');}
 function clpS(n){return n>=1000000?'$'+(n/1e6).toFixed(1)+'M':n>=1000?'$'+(n/1000|0)+'K':'$'+n;}
 function hhmm(ts){const d=new Date(ts);return d.getHours().toString().padStart(2,'0')+':'+d.getMinutes().toString().padStart(2,'0');}
-function getUsers(){return DB.get('users')||[];}
-function getJobs(){return DB.get('jobs')||[];}
-function saveJobs(j){DB.set('jobs',j);}
-function getMsgs(){return DB.get('msgs')||[];}
-function saveMsgs(m){DB.set('msgs',m);}
-function uById(id){return getUsers().find(u=>u.id===id)||{name:'?',last:'',color:'#888',role:'client',verified:false};}
+function uById(id){return getUsers().find(u=>u.id===id)||{name:'?',last:'',color:'#888',verified:false};}
 function jById(id){return getJobs().find(j=>j.id===id);}
 function ini(u){return((u.name||'?')[0]+((u.last||'')[0]||'')).toUpperCase();}
 function lvClass(l){return l==='Diamante'?'lv-dia':l==='Oro'?'lv-oro':l==='Plata'?'lv-plata':'lv-std';}
@@ -1343,12 +1242,12 @@ function go(name){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   const sid='screen-'+(SMAP[name]||name);
   const el=document.getElementById(sid);
-  if(!el){console.warn('No screen:',sid);return;}
+  if(!el) return;
   el.classList.add('active');
   window.scrollTo(0,0);
   updNavs();
   updBottomTab(name);
-  // Show/hide map-list toggle only on relevant screens
+  
   const mlToggle=$('ml-toggle');
   if(mlToggle){
     const showToggle=['landing','browse'].includes(name);
@@ -1357,6 +1256,7 @@ function go(name){
     mlToggle.textContent='🗺 Ver mapa';
     resetMapListLayout();
   }
+  
   const renders={
     browse:renderBrowse,landing:renderLanding,
     'my-jobs':renderMyJobs,profile:renderProfile,
@@ -1364,7 +1264,6 @@ function go(name){
   };
   if(renders[name]) renders[name]();
 
-  // Init maps on first visit
   if(name==='landing') setTimeout(()=>{initMapForScreen('land','map-land','land-mpanel');if(MAPS.land)MAPS.land.invalidateSize();},100);
   if(name==='browse')  setTimeout(()=>{initMapForScreen('browse','map-browse','browse-mpanel');if(MAPS.browse)MAPS.browse.invalidateSize();},100);
 }
@@ -1382,8 +1281,7 @@ function toggleMapList(){
   const mpanel=document.querySelector('.screen.active .mpanel');
   const btn=$('ml-toggle');
   if(!lpanel||!mpanel) return;
-  const isMobile=window.innerWidth<=768;
-  if(!isMobile)return;
+  if(window.innerWidth>768)return;
   mlListVisible=!mlListVisible;
   if(mlListVisible){
     lpanel.classList.remove('hidden');mpanel.classList.add('hidden');
@@ -1391,7 +1289,6 @@ function toggleMapList(){
   } else {
     lpanel.classList.add('hidden');mpanel.classList.remove('hidden');
     btn.textContent='☰ Ver lista';
-    // Fix grey tiles
     const activeMap=document.querySelector('.screen.active #map-land, .screen.active #map-browse');
     const mapId=activeMap?.id==='map-land'?'land':'browse';
     setTimeout(()=>{if(MAPS[mapId])MAPS[mapId].invalidateSize();},150);
@@ -1401,7 +1298,6 @@ function resetMapListLayout(){
   document.querySelectorAll('.lpanel,.mpanel').forEach(el=>{el.classList.remove('hidden');});
 }
 
-// Review photo preview
 let revPhotoDataURLs=[];
 function previewRevPhotos(input){
   const grid=$('rev-thumb-grid');
@@ -1434,6 +1330,12 @@ function initMapForScreen(id,containerId,panelId){
 function goBack(){go(prev||'browse');}
 function auth(cb){if(CU)cb();else{go('login');window._aft=cb;}}
 
+function authPostJob(){
+  if(!CU){ window._aft=authPostJob; go('login'); return; }
+  if(!CU.verifIdentity){ toast('⚠️ Verificación requerida: Valida tu Carnet de Identidad para publicar (Mock).'); return; }
+  go('post-job');
+}
+
 // ╔════════════════════════════════════════════╗
 // ║  NAV BARS                                   ║
 // ╚════════════════════════════════════════════╝
@@ -1458,7 +1360,7 @@ document.addEventListener('click',e=>{
 });
 
 // ╔════════════════════════════════════════════╗
-// ║  AUTH                                       ║
+// ║  AUTH (Modificado a cuentas universales)    ║
 // ╚════════════════════════════════════════════╝
 function doLogin(){
   const email=$('l-email').value.trim(),pw=$('l-pass').value;
@@ -1473,44 +1375,24 @@ function doLogin(){
 
 function doRegister(){
   const name=$('r-name').value.trim(),last=$('r-last').value.trim();
-  const email=$('r-email').value.trim(),pw=$('r-pass').value;
+  const email=$('r-email').value.trim(), phone=$('r-phone').value.trim(), pw=$('r-pass').value;
   const err=$('r-err');
-  if(!name||!email||!pw){err.textContent='Completa todos los campos.';err.style.display='block';return;}
+  if(!name||!email||!phone||!pw){err.textContent='Completa todos los campos.';err.style.display='block';return;}
   if(pw.length<6){err.textContent='La contraseña debe tener mínimo 6 caracteres.';err.style.display='block';return;}
   if(getUsers().find(u=>u.email===email)){err.textContent='Este email ya está registrado.';err.style.display='block';return;}
   err.style.display='none';
   const cols=['#1a7a55','#6a2a8a','#1a5a9a','#9a5010','#3a4ad9','#8a2a3a','#2a7a2a'];
-  const nu={id:'u'+Date.now(),name,last,email,pw,role:regRole,
-    spec:regRole==='worker'?($('r-spec')?.value||'General'):'',
-    bio:regRole==='worker'?($('r-bio')?.value||''):'',
-    linkedin:regRole==='worker'?($('r-linkedin')?.value||''):'',
+  const nu={id:'u'+Date.now(),name,last,email,phone,pw,
     color:cols[Math.floor(Math.random()*cols.length)],
-    rating:0,reviews:0,jobs:0,level:'Estándar',mj:0,verified:false,ts:Date.now()};
+    verifIdentity:false, verifBackground:false, verifPro:false,
+    level:'Estándar',mj:0,ts:Date.now(),
+    reviewsAsWorker:[], reviewsAsClient:[]};
   DB.push('users',nu);CU=nu;DB.set('cu',nu);
-  toast(`¡Cuenta creada! Bienvenido/a, ${name}. 🎉`);
+  toast(`¡Cuenta creada y sesión iniciada! 🎉`);
   go('browse');
 }
 
 function logout(){CU=null;DB.set('cu',null);toast('Sesión cerrada');go('landing');}
-
-function selRole(r){
-  regRole=r;
-  $('rc-cli').classList.toggle('on',r==='client');
-  $('rc-wrk').classList.toggle('on',r==='worker');
-  $('r-extra').style.display=r==='worker'?'block':'none';
-  $('r-pro-extra').style.display='none';
-  if(r==='worker'){
-    const s=$('r-spec');
-    if(s&&s.options.length<=1)[...HC,...PC].forEach(c=>{const o=document.createElement('option');o.value=c.n;o.textContent=c.n;s.appendChild(o);});
-    s.onchange=()=>{
-      const isPro=PC.some(c=>c.n===s.value);
-      $('r-pro-extra').style.display=isPro?'block':'none';
-      // Update verification hint
-      const ph=$('r-verif-pro');
-      if(ph) ph.style.display=isPro?'block':'none';
-    };
-  }
-}
 
 // ╔════════════════════════════════════════════╗
 // ║  JOB FILTERING                              ║
@@ -1524,7 +1406,7 @@ function fJobs(mode,filter){
 }
 
 // ╔════════════════════════════════════════════╗
-// ║  JOB CARD HTML                              ║
+// ║  JOB CARD HTML (MEJORA AIRTASKER)           ║
 // ╚════════════════════════════════════════════╝
 function jCardHTML(j,ctx){
   const c=uById(j.cid);
@@ -1532,22 +1414,20 @@ function jCardHTML(j,ctx){
   const shortAddr=addr.length>32?addr.substring(0,32)+'…':addr;
   const isOnline=addr.toLowerCase().includes('online')||addr.toLowerCase().includes('remoto');
   return`<div class="jcard" data-id="${j.id}" onclick="openDetail('${j.id}','${ctx}')">
-    <div class="jct">
-      <div class="jc-title">${j.title}</div>
-      <div class="jc-price">${clp(j.budget)}</div>
+    <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+      <div style="font-weight:600; font-size:15px; color:var(--ink); padding-right:10px; line-height:1.35;">${j.title}</div>
+      <div style="font-weight:700; font-size:17px; color:var(--ink);">${clp(j.budget)}</div>
     </div>
-    <div class="jc-meta">
-      ${!isOnline?`<span>📍 ${shortAddr}</span>`:'<span>🌐 Remoto</span>'}
-      <span>📅 ${j.date}</span>
-      ${j.apps.length?`<span>👤 ${j.apps.length} postulante${j.apps.length>1?'s':''}</span>`:''}
+    <div style="margin-top:10px; font-size:13px; color:var(--ink3);">
+      <div style="margin-bottom:4px;display:flex;align-items:center;gap:4px;">${isOnline?'🌐 Remoto':`📍 ${shortAddr}`}</div>
+      <div style="display:flex;align-items:center;gap:4px;">📅 ${j.date}</div>
     </div>
-    <div class="jc-foot">
-      <div class="jc-tags">
-        <span class="jc-open">Abierto</span>
-        ${j.urgent?'<span class="pill pill-o" style="font-size:11px;padding:2px 8px;">⚡ Urgente</span>':''}
-        <span class="pill pill-${j.type==='pro'?'b':'gray'}" style="font-size:11px;padding:2px 8px;">${j.type==='pro'?'Pro':'Home'}</span>
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-top:14px;">
+      <div style="display:flex; gap:6px; flex-wrap:wrap;">
+        <span class="pill pill-gray" style="font-size:11px;">Abierto</span>
+        ${j.urgent?'<span class="pill pill-o" style="font-size:11px;">⚡ Urgente</span>':''}
       </div>
-      <div class="av" style="width:24px;height:24px;font-size:9px;background:${c.color};">${ini(c)}</div>
+      <div class="av" style="width:28px;height:28px;font-size:11px;background:${c.color};">${ini(c)}</div>
     </div>
   </div>`;
 }
@@ -1594,7 +1474,7 @@ function switchCatSeg(mode,btn){
 function heroSearch(){
   const q=$('hero-q').value.trim();
   if(q) _preFillTitle=q;
-  auth(()=>go('post-job'));
+  authPostJob();
 }
 function qf(kw){
   bMode='home';bFilter='all';go('browse');
@@ -1612,7 +1492,7 @@ function renderBrowse(){updNavs();renderBrowseWith(fJobs(bMode,bFilter));}
 function renderBrowseWith(jobs){
   const list=$('browse-list');if(!list)return;
   if(!jobs.length){
-    list.innerHTML=`<div class="empty"><div class="ei">📭</div><p>No hay trabajos disponibles.<br><button class="btn btn-p btn-sm" onclick="auth(()=>go('post-job'))" style="margin-top:12px;">Publicar el primero</button></p></div>`;
+    list.innerHTML=`<div class="empty"><div class="ei">📭</div><p>No hay trabajos disponibles.<br><button class="btn btn-p btn-sm" onclick="authPostJob()" style="margin-top:12px;">Publicar el primero</button></p></div>`;
     $('browse-cnt').textContent='0 trabajos';
     if(MAPS.browse) addMarkersToMap('browse',[]);
     return;
@@ -1645,28 +1525,28 @@ function openDetail(id,from){
   const job=jById(id);if(!job)return;
   const c=uById(job.cid);
   const isOwner=CU&&CU.id===job.cid;
-  const isWorker=CU&&CU.role==='worker';
   const applied=CU&&job.apps.find(a=>a.wid===CU.id);
   const addr=job.addr||job.loc||'';
-  const li=CU?lvInfo(CU.mj||0):lvInfo(0);
-  const comm=job.type==='home'?li.homeCom:li.proCom;
-
-  $('d-crumb').textContent=job.title.substring(0,44)+(job.title.length>44?'…':'');
+  
+  let clAvg = 0;
+  if(c.reviewsAsClient && c.reviewsAsClient.length) clAvg = (c.reviewsAsClient.reduce((a,b)=>a+b.stars,0)/c.reviewsAsClient.length).toFixed(1);
 
   let appsHTML='';
   if(isOwner&&job.apps.length){
     appsHTML=`<div style="margin-top:1.5rem;"><div class="d-sec-hd">Postulantes (${job.apps.length})</div>
       ${job.apps.map(a=>{
         const w=uById(a.wid);
+        let wAvg = 0;
+        if(w.reviewsAsWorker && w.reviewsAsWorker.length) wAvg = (w.reviewsAsWorker.reduce((a,b)=>a+b.stars,0)/w.reviewsAsWorker.length).toFixed(1);
         return`<div class="app-row">
           <div class="av" style="width:42px;height:42px;font-size:15px;background:${w.color};">${ini(w)}</div>
           <div style="flex:1;">
             <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:3px;">
               <strong style="font-size:14px;">${w.name} ${w.last||''}</strong>
-              ${w.verified?'<span style="font-size:11px;color:var(--gm);background:var(--gl);padding:2px 8px;border-radius:100px;font-weight:600;">✓ Verificado</span>':''}
+              ${w.verifIdentity?'<span style="font-size:11px;color:var(--gm);background:var(--gl);padding:2px 8px;border-radius:100px;font-weight:600;">✓ Verificado</span>':''}
               ${w.level?`<span class="badge-lv ${lvClass(w.level)}">${lvEmoji(w.level)} ${w.level}</span>`:''}
             </div>
-            ${w.rating?`<div class="stars" style="font-size:12px;">${'★'.repeat(Math.round(w.rating))}<span style="color:var(--ink3);font-size:11px;margin-left:3px;">${w.rating} (${w.reviews} reseñas)</span></div>`:''}
+            ${wAvg?`<div class="stars" style="font-size:12px;">★ ${wAvg} (${w.reviewsAsWorker.length} reseñas como Pro)</div>`:''}
             <p style="font-size:13px;color:var(--ink3);margin:.5rem 0;line-height:1.55;font-style:italic;">"${a.msg}"</p>
             <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
               <strong style="font-size:15px;">${clp(a.price)}</strong>
@@ -1679,7 +1559,7 @@ function openDetail(id,from){
   } else if(isOwner){
     appsHTML=`<div style="margin-top:1.5rem;"><div class="d-sec-hd">Postulantes</div>
       <div class="empty" style="padding:1.5rem;border:1px solid var(--line);border-radius:var(--rl);">
-        <div class="ei">⏳</div><p>Aún no hay postulaciones.<br>El trabajo ya es visible en el mapa para todos los trabajadores del área.</p>
+        <div class="ei">⏳</div><p>Aún no hay postulaciones.<br>El trabajo ya es visible en el mapa para todos los trabajadores.</p>
       </div></div>`;
   }
 
@@ -1688,11 +1568,9 @@ function openDetail(id,from){
   else if(job.status==='active') action=`<div style="background:var(--gl);padding:12px 16px;border-radius:var(--r);text-align:center;font-size:14px;color:var(--gm);font-weight:600;">✓ Trabajo en curso</div>`;
   else if(isOwner) action=`<button class="btn btn-sm btn-blk" style="color:#d93535;border:1px solid #ffd0d0;border-radius:100px;" onclick="delJob('${job.id}')">🗑 Eliminar publicación</button>`;
   else if(applied) action=`<div style="background:var(--gl);padding:12px 16px;border-radius:var(--r);text-align:center;font-size:14px;color:var(--gm);font-weight:600;">✓ Ya postulaste · Aguarda respuesta</div>`;
-  else if(isWorker){
-    action=`<button class="btn btn-p btn-blk btn-lg" onclick="openApply('${job.id}')">Postular al trabajo →</button>
-    <p style="font-size:12px;color:var(--ink3);text-align:center;margin-top:8px;">Tu comisión actual: <strong>${comm}%</strong> · Recibirás: <strong>${clp(Math.round(job.budget*(1-comm/100)))}</strong></p>`;
+  else {
+    action=`<button class="btn btn-p btn-blk btn-lg" onclick="openApply('${job.id}')">Postular al trabajo →</button>`;
   }
-  else action=`<button class="btn btn-g btn-blk" onclick="auth(()=>go('post-job'))">Publicar trabajo similar</button>`;
 
   $('d-content').innerHTML=`
     <div>
@@ -1720,23 +1598,13 @@ function openDetail(id,from){
           <div>
             <div style="font-weight:600;font-size:15px;">${c.name} ${c.last||''}</div>
             <div style="font-size:12px;color:var(--ink3);margin-top:1px;">
-              ${c.rating?`★ ${c.rating} cliente`:'Cliente de Servy'}
+              ${clAvg?`★ ${clAvg} cliente`:'Cliente de Servy'}
             </div>
           </div>
         </div>
         ${action}
         <div class="guar-box" style="margin-top:.875rem;">
           🛡️ Garantía de satisfacción Servy incluida
-        </div>
-      </div>
-      <div class="card">
-        <div class="d-sec-hd">Pago protegido</div>
-        <div style="font-size:13px;color:var(--ink3);line-height:1.9;">
-          ✓ Postula con tu precio propuesto<br>
-          ✓ El cliente elige al mejor candidato<br>
-          ✓ El dinero queda retenido (escrow)<br>
-          ✓ Se libera al confirmar el trabajo<br>
-          ✓ Garantía de satisfacción si hay problemas
         </div>
       </div>
     </div>`;
@@ -1746,17 +1614,25 @@ function delJob(id){
   if(!confirm('¿Eliminar esta publicación?'))return;
   const j=getJobs();const i=j.findIndex(x=>x.id===id);
   if(i>=0){j[i].status='deleted';saveJobs(j);}
-  // Remove marker from maps
   addMarkersToMap('browse',fJobs(bMode,bFilter));
   toast('Publicación eliminada');go('my-jobs');
 }
 
 // ╔════════════════════════════════════════════╗
-// ║  APPLY                                      ║
+// ║  APPLY (MOCK VERIFICACION ESCALONADA)       ║
 // ╚════════════════════════════════════════════╝
 function openApply(jid){
   if(!CU){go('login');return;}
-  applyJobId=jid;const j=jById(jid);
+  const j=jById(jid);
+  
+  if(j.type==='home' && !CU.verifBackground){ 
+      toast('⚠️ Verificación requerida: Debes validar tu Certificado de Antecedentes para postular a trabajos Home.'); return; 
+  }
+  if(j.type==='pro' && !CU.verifPro){ 
+      toast('⚠️ Verificación requerida: Sube tu título o portafolio verificado para postular a trabajos Pro.'); return; 
+  }
+
+  applyJobId=jid;
   $('apply-info').innerHTML=`<strong style="font-size:14px;">${j.title}</strong><br><span style="color:var(--ink3);font-size:13px;">📍 ${j.addr||j.loc||''} · Presupuesto: ${clp(j.budget)}</span>`;
   $('ap-price').value=j.budget;$('ap-msg').value='';oov('apply');
 }
@@ -1775,18 +1651,20 @@ function submitApply(){
 // ╚════════════════════════════════════════════╝
 function openHire(wid,jid,price){
   const w=uById(wid);hireData={wid,jid,price};
+  let wAvg = 0;
+  if(w.reviewsAsWorker && w.reviewsAsWorker.length) wAvg = (w.reviewsAsWorker.reduce((a,b)=>a+b.stars,0)/w.reviewsAsWorker.length).toFixed(1);
+
   $('hire-info').innerHTML=`<div style="display:flex;align-items:center;gap:12px;background:var(--surf);border-radius:var(--r);padding:12px;">
     <div class="av" style="width:42px;height:42px;font-size:15px;background:${w.color};">${ini(w)}</div>
     <div>
-      <div style="font-weight:600;">${w.name} ${w.last||''} ${w.verified?'<span style="font-size:11px;color:var(--gm);"> ✓ Verificado</span>':''}</div>
-      <div style="font-size:13px;color:var(--ink3);">${w.spec||''} · Propuesta: ${clp(price)}</div>
-      ${w.rating?`<div class="stars" style="font-size:12px;">★ ${w.rating} (${w.reviews} reseñas)</div>`:''}
+      <div style="font-weight:600;">${w.name} ${w.last||''} ${w.verifIdentity?'<span style="font-size:11px;color:var(--gm);"> ✓ Verificado</span>':''}</div>
+      <div style="font-size:13px;color:var(--ink3);">Propuesta: ${clp(price)}</div>
+      ${wAvg?`<div class="stars" style="font-size:12px;">★ ${wAvg} (${w.reviewsAsWorker.length} reseñas)</div>`:''}
     </div>
   </div>`;oov('hire');
 }
 async function confirmHire(){
   if(!hireData)return;
-  // Simulate payment gateway redirect
   const btn=document.querySelector('#ov-hire .btn-p');
   if(btn){btn.disabled=true;btn.textContent='🔒 Redirigiendo a pago seguro...';}
   await new Promise(r=>setTimeout(r,1800));
@@ -1803,7 +1681,6 @@ async function confirmHire(){
 // ╔════════════════════════════════════════════╗
 // ║  MAP SEARCH                                 ║
 // ╚════════════════════════════════════════════╝
-// Combined list: job addresses + known sectors
 function getMapSearchItems(mapId){
   const jobs=MAP[mapId]||[];
   const jobItems=(MAP_MARKERS[mapId]||[]).map((_,i)=>{
@@ -1818,7 +1695,6 @@ function mapSrchInput(input,mapId){
   const q=input.value.trim().toLowerCase();
   const res=$(`map-${mapId}-results`);if(!res)return;
   if(!q){res.classList.remove('open');return;}
-  // Search jobs + sectors
   const jobs=fJobs(mapId==='land'?lMode:'home',mapId==='land'?lFilter:'all');
   const matches=[];
   jobs.filter(j=>(j.title+' '+(j.addr||j.loc||'')).toLowerCase().includes(q)).slice(0,4).forEach(j=>{
@@ -1845,18 +1721,14 @@ function mapSrchSelect(i,mapId){
   const coords=item.coords||LOCS['Santiago Centro'];
   map.flyTo(coords,15,{duration:1.2});
   if(item.isJob){
-    // Highlight the card
     setTimeout(()=>highlightCard(item.jid),600);
-    // Open the popup for that marker
     const jobs=fJobs(mapId==='land'?lMode:bMode,mapId==='land'?lFilter:bFilter);
     const ji=jobs.findIndex(j=>j.id===item.jid);
     if(ji>=0&&MAP_MARKERS[mapId][ji]) MAP_MARKERS[mapId][ji].openPopup();
   }
 }
 
-function mapSrchHide(mapId){
-  $(`map-${mapId}-results`)?.classList.remove('open');
-}
+function mapSrchHide(mapId){$(`map-${mapId}-results`)?.classList.remove('open');}
 
 function mapSrchGo(mapId){
   const inp=$(`map-${mapId}-srch`);if(!inp||!inp.value.trim())return;
@@ -1910,7 +1782,6 @@ function initPost(){
   const pd=$('p-date');if(pd){pd.min=new Date().toISOString().split('T')[0];pd.value=pd.min;}
   const ai=$('p-addr');if(ai)ai.value='';
   const mh=$('milestone-hint');if(mh)mh.style.display='none';
-  // Pre-fill title if coming from heroSearch
   if(_preFillTitle){const t=$('p-title');if(t)t.value=_preFillTitle;_preFillTitle='';}
   else{const t=$('p-title');if(t)t.value='';}
   updNavs();
@@ -2031,15 +1902,12 @@ function mjTab(t,btn){
         <button class="btn btn-g btn-sm" onclick="openDetail('${j.id}','my-jobs')">Ver</button>
       </div></div>`).join('');
   } else {
-    // COMPLETADOS — both client and worker can leave reviews
     const dn=jobs.filter(j=>(j.cid===CU.id||j.hwid===CU.id)&&j.status==='done');
     if(!dn.length){c.innerHTML=emptyCard('✅','Sin trabajos completados aún.');return;}
     c.innerHTML=dn.map(j=>{
       const isClient=j.cid===CU.id;
-      const isWorker=j.hwid===CU.id;
       const myReview=isClient?j.reviewByClient:j.reviewByWorker;
       const otherReview=isClient?j.reviewByWorker:j.reviewByClient;
-      const otherUser=isClient?uById(j.hwid||''):uById(j.cid);
       return`<div class="mjcard" style="flex-direction:column;gap:.75rem;">
         <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;width:100%;">
           <div style="flex:1;"><div class="mj-t">${j.title}</div>
@@ -2070,7 +1938,7 @@ function completeJob(id){
 // ╔════════════════════════════════════════════╗
 // ║  REVIEWS — BIDIRECCIONAL                    ║
 // ╚════════════════════════════════════════════╝
-let reviewSide='client'; // 'client' or 'worker'
+let reviewSide='client'; 
 function openRev(id,side='client'){reviewJobId=id;reviewSide=side;starCount=5;updStars(5);$('rev-txt').value='';
   const title=side==='client'?'Reseña al trabajador':'Reseña al cliente';
   const ph=side==='client'?'¿Cómo fue el trabajo? Puntualidad, calidad, comunicación...':'¿Cómo fue el cliente? Claridad del encargo, trato, puntualidad de pago...';
@@ -2089,6 +1957,16 @@ function submitReview(){
   if(i>=0){
     const key=reviewSide==='client'?'reviewByClient':'reviewByWorker';
     j[i][key]={stars:starCount,txt,ts:Date.now(),fid:CU.id,photos:[...revPhotoDataURLs]};
+    // Guardar también en el perfil del usuario evaluado
+    const users=getUsers();
+    const evaluatedId=reviewSide==='client'?j[i].hwid:j[i].cid;
+    const evIndex=users.findIndex(x=>x.id===evaluatedId);
+    if(evIndex>=0){
+        const arrName=reviewSide==='client'?'reviewsAsWorker':'reviewsAsClient';
+        if(!users[evIndex][arrName]) users[evIndex][arrName] = [];
+        users[evIndex][arrName].push({stars:starCount, txt});
+        DB.set('users', users);
+    }
   }
   saveJobs(j);cov('review');
   revPhotoDataURLs=[];
@@ -2097,111 +1975,50 @@ function submitReview(){
 }
 
 // ╔════════════════════════════════════════════╗
-// ║  PROFILE                                    ║
+// ║  PROFILE (UNIVERSAL)                        ║
 // ╚════════════════════════════════════════════╝
 function renderProfile(){
   if(!CU){go('login');return;}updNavs();
-  const u=CU;
+  const u=getUsers().find(x=>x.id===CU.id);
   const done=getJobs().filter(j=>(j.cid===u.id||j.hwid===u.id)&&j.status==='done').length;
-  const li=lvInfo(u.mj||0);
+  
+  const rw = u.reviewsAsWorker||[]; const rc = u.reviewsAsClient||[];
+  const wrkAvg = rw.length ? (rw.reduce((a,b)=>a+b.stars,0)/rw.length).toFixed(1) : 'Sin reseñas';
+  const cliAvg = rc.length ? (rc.reduce((a,b)=>a+b.stars,0)/rc.length).toFixed(1) : 'Sin reseñas';
+
   $('prof-content').innerHTML=`
-    <div class="prof-hcard">
+    <div class="prof-hcard" style="align-items:center;">
       <div class="av" style="width:78px;height:78px;font-size:26px;flex-shrink:0;background:${u.color};">${ini(u)}</div>
       <div style="flex:1;">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
-          <div>
-            <div class="prof-name">${u.name} ${u.last||''} ${u.verified?'<span style="font-size:12px;font-weight:500;color:var(--gm);background:var(--gl);padding:2px 9px;border-radius:100px;vertical-align:middle;">✓ Verificado</span>':''}</div>
-            <div class="prof-type">${u.role==='worker'?`Trabajador · ${u.spec||'General'}`:'Cliente de Servy'}</div>
-            ${u.rating?`<div class="stars">★ ${u.rating} <span style="font-size:13px;color:var(--ink3);">(${u.reviews} reseñas)</span></div>`:'<div style="font-size:13px;color:var(--ink4);">Sin reseñas aún</div>'}
-          </div>
-          ${u.level?`<span class="badge-lv ${lvClass(u.level)}">${lvEmoji(u.level)} ${u.level}</span>`:''}
-        </div>
-        <div class="pstats">
-          <div><div class="pst-n">${done}</div><div class="pst-l">Completados</div></div>
-          <div><div class="pst-n">${u.reviews||0}</div><div class="pst-l">Reseñas</div></div>
-          <div><div class="pst-n">${u.mj||0}</div><div class="pst-l">Este mes</div></div>
-        </div>
+        <div class="prof-name">${u.name} ${u.last||''}</div>
+        <div class="prof-type">${u.email} · ${u.phone||''}</div>
       </div>
     </div>
-
-    ${u.role==='worker'?`
-    <div class="card" style="margin-bottom:1.25rem;">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-        <span style="font-size:13px;color:var(--ink3);font-weight:500;">Nivel del mes · Comisión actual</span>
-        <span class="badge-lv ${lvClass(li.cur)}">${lvEmoji(li.cur)} ${li.cur} · ${li.homeCom}%/${li.proCom}%</span>
+    
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-bottom:1.5rem;">
+      <div style="padding:1.5rem; background:var(--white); border:1px solid var(--line); border-radius:var(--rl);">
+        <h3 style="font-size:14px; margin-bottom:.5rem;">⭐ Como Profesional</h3>
+        <div style="font-size:24px; font-weight:700; color:var(--ink);">${wrkAvg}</div>
+        <div style="font-size:12px; color:var(--ink3);">${rw.length} trabajos realizados</div>
       </div>
-      <div class="pbar"><div class="pfill" style="width:${Math.min(100,((u.mj||0)/li.target)*100)}%;"></div></div>
-      <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--ink3);margin-top:5px;">
-        <span>${u.mj||0} de ${li.target} trabajos completados</span>
-        <span>${li.next?`${li.target-(u.mj||0)} más → nivel ${li.next}`:'¡Nivel máximo! 🎉'}</span>
+      <div style="padding:1.5rem; background:var(--white); border:1px solid var(--line); border-radius:var(--rl);">
+        <h3 style="font-size:14px; margin-bottom:.5rem;">⭐ Como Cliente</h3>
+        <div style="font-size:24px; font-weight:700; color:var(--ink);">${cliAvg}</div>
+        <div style="font-size:12px; color:var(--ink3);">${rc.length} trabajos publicados</div>
       </div>
-    </div>`:''}
-
-    <div class="ptabs" id="prof-tabs">
-      ${u.role==='worker'?'<div class="ptab on" onclick="profTab(\'photos\',this)">Mis trabajos</div>':''}
-      <div class="ptab ${u.role!=='worker'?'on':''}" onclick="profTab('reviews',this)">Reseñas</div>
-      <div class="ptab" onclick="profTab('edit',this)">Editar perfil</div>
     </div>
-    <div id="prof-tab-c">${u.role==='worker'?renderPhotos():renderRevs()}</div>`;
-}
-
-function profTab(t,btn){
-  document.querySelectorAll('#prof-tabs .ptab').forEach(b=>b.classList.remove('on'));
-  btn.classList.add('on');
-  const c=$('prof-tab-c');if(!c)return;
-  if(t==='photos') c.innerHTML=renderPhotos();
-  else if(t==='reviews') c.innerHTML=renderRevs();
-  else c.innerHTML=`
-    <div class="card">
-      <div class="fg"><label>Nombre</label><input id="e-name" value="${CU.name}"/></div>
-      <div class="fg"><label>Apellido</label><input id="e-last" value="${CU.last||''}"/></div>
-      ${CU.role==='worker'?`<div class="fg"><label>Sobre ti</label><textarea id="e-bio">${CU.bio||''}</textarea></div>`:''}
-      <button class="btn btn-p" onclick="saveProf()">Guardar cambios</button>
+    
+    <div style="margin-top:2rem; padding:1.5rem; background:var(--surf); border-radius:var(--rl);">
+      <h3 style="font-size:15px; margin-bottom:1rem;">🛡️ Estado de Verificaciones</h3>
+      <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:14px;"><span>Identidad (Carnet)</span> <strong>${u.verifIdentity?'✅ Aprobado':'❌ Pendiente'}</strong></div>
+      <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:14px;"><span>Antecedentes</span> <strong>${u.verifBackground?'✅ Aprobado':'❌ Pendiente'}</strong></div>
+      <div style="display:flex; justify-content:space-between; font-size:14px;"><span>Perfil Pro (Título/Portfolio)</span> <strong>${u.verifPro?'✅ Aprobado':'❌ Pendiente'}</strong></div>
+      <button class="btn btn-p btn-blk" style="margin-top:1.5rem;" onclick="toast('Flujo de validación iniciado (Mock)')">Verificar cuenta</button>
     </div>`;
-}
-function renderPhotos(){
-  return`<div class="photo-grid">${['🔧','🏠','⚡','🎨','🪑','🧹'].map(e=>`<div class="photo-cell">${e}</div>`).join('')}</div>
-  <p style="font-size:12px;color:var(--ink4);margin-top:.75rem;text-align:center;">Sube fotos de tus trabajos para generar más confianza</p>`;
-}
-function renderRevs(){
-  const jobs=getJobs();
-  const revs=[];
-  jobs.forEach(j=>{
-    if(j.hwid===CU.id&&j.reviewByClient) revs.push({rev:j.reviewByClient,job:j,label:'De cliente'});
-    if(j.cid===CU.id&&j.reviewByWorker) revs.push({rev:j.reviewByWorker,job:j,label:'Del trabajador'});
-  });
-  if(!revs.length) return`<div class="empty" style="border:1px solid var(--line);border-radius:var(--rl);"><div class="ei">⭐</div><p>Sin reseñas recibidas aún</p></div>`;
-  return revs.map(({rev,job,label})=>{
-    const f=uById(rev.fid);
-    const photosHTML=(rev.photos&&rev.photos.length)?`<div class="rev-thumb-grid" style="margin-top:8px;">
-      ${rev.photos.map(p=>`<div class="rev-thumb"><img src="${p}" style="width:100%;height:100%;border-radius:var(--r);object-fit:cover;border:1px solid var(--line);"/></div>`).join('')}
-    </div>`:'';
-    return`<div class="rev-row">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
-        <div class="av" style="width:30px;height:30px;font-size:11px;background:${f.color};">${ini(f)}</div>
-        <div>
-          <div style="display:flex;align-items:center;gap:8px;">
-            <span style="font-size:13px;font-weight:500;">${f.name} ${f.last||''}</span>
-            <span style="font-size:11px;color:var(--ink3);">${label}</span>
-          </div>
-          <div class="stars" style="font-size:12px;">${'★'.repeat(rev.stars)}<span style="color:var(--ink3);font-size:11px;"> ${rev.stars}.0 · ${job.title.substring(0,30)}…</span></div>
-        </div>
-      </div>
-      <p style="font-size:14px;color:var(--ink2);line-height:1.6;font-style:italic;">"${rev.txt}"</p>
-      ${photosHTML}
-    </div>`;}).join('');
-}
-function saveProf(){
-  const name=$('e-name').value.trim(),last=$('e-last').value.trim();
-  const bio=$('e-bio')?.value.trim()||CU.bio;
-  const users=getUsers();const i=users.findIndex(u=>u.id===CU.id);
-  if(i>=0){users[i].name=name;users[i].last=last;users[i].bio=bio;
-    DB.set('users',users);CU={...CU,name,last,bio};DB.set('cu',CU);}
-  toast('Perfil actualizado ✓');renderProfile();
 }
 
 // ╔════════════════════════════════════════════╗
-// ║  MESSAGES                                   ║
+// ║  MESSAGES (AESTHETIC)                       ║
 // ╚════════════════════════════════════════════╝
 function renderMessages(){
   if(!CU){go('login');return;}updNavs();
@@ -2239,12 +2056,14 @@ function openConv(id){
       </div>
     </div>
     <div class="chat-body" id="chat-body">
-      ${cv.msgs.map(m=>`<div class="bubble ${m.from===CU.id?'bubble-me':'bubble-them'}">${m.txt}
-        <div style="font-size:10px;opacity:.5;margin-top:3px;text-align:right;">${hhmm(m.ts)}</div>
-      </div>`).join('')}
+      ${cv.msgs.map(m=>`
+        <div class="bubble ${m.from===CU.id?'bubble-me':'bubble-them'}">
+          ${m.txt}
+          <div style="font-size:10px;opacity:.65;margin-top:4px;text-align:right;">${hhmm(m.ts)}</div>
+        </div>`).join('')}
     </div>
     <div class="chat-ft">
-      <input class="chat-inp" id="chat-inp" placeholder="Escribe un mensaje…" onkeydown="if(event.key==='Enter')sendMsg('${id}')"/>
+      <input class="chat-inp" id="chat-inp" placeholder="Escribe un mensaje…" autocomplete="off" onkeydown="if(event.key==='Enter')sendMsg('${id}')"/>
       <button class="btn btn-p btn-sm" onclick="sendMsg('${id}')">Enviar</button>
     </div>`;
   setTimeout(()=>{const b=$('chat-body');if(b)b.scrollTop=b.scrollHeight;},50);
@@ -2273,11 +2092,9 @@ seed();
 CU=DB.get('cu');
 renderLanding();
 updNavs();
-// Hide map/list toggle initially
 const _mlT=document.getElementById('ml-toggle');
 if(_mlT) _mlT.style.display='none';
 
-// Init landing map immediately after DOM is ready
 setTimeout(()=>{
   const panel=$('land-mpanel');const c=$('map-land');
   if(panel&&c&&!MAPS.land){
